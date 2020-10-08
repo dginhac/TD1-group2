@@ -6,8 +6,8 @@
 * @Date:    2020-10-02 08:45:48
 * @Summary:
 *
-* @Last Modified by:   d0m
-* @Last Modified time: 2020-10-02 09:25:56
+* @Last Modified by:   d0m G
+* @Last Modified time: 2020-10-08 11:55:54
 */
 
 #include <iostream>
@@ -23,6 +23,9 @@ int main()
 
     std::cout << "p1 = (" << p1.x() << "," << p1.y() << ")" << std::endl;
     std::cout << "p2 = (" << p2.x() << "," << p2.y() << ")" << std::endl;
+
+    p2.updateY(4);
+
     std::cout << "bye!!" << std::endl;
     return 0;
 }

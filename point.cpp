@@ -6,11 +6,12 @@
 * @Date:    2020-10-02 08:39:31
 * @Summary:
 *
-* @Last Modified by:   d0m
-* @Last Modified time: 2020-10-02 09:24:43
+* @Last Modified by:   d0m G
+* @Last Modified time: 2020-10-08 11:42:10
 */
 
 
+#include <cmath>
 #include "point.h"
 
 namespace geometry {
@@ -24,5 +25,29 @@ namespace geometry {
     double Point::y() const {
         return _y;
     }
+    void Point::updateX(double x) {
+        _x = x;
+    }
+    void Point::updateY(double y) {
+        _y = y;
+    }
+    void Point::update(double x, double y) {
+        updateX(x);
+        updateY(y);
+    }
+    void Point::move(double dx, double dy) {
+        update(x()+dx,y()+dy);
+    }
+
+    double Point::distance(Point p) const {
+        double dx = x() - p.x();
+        double dy = y() - p.y();
+        return sqrt(dx*dx + dy*dy);
+    }
+
+    double distance(Point a, Point b) {
+        return a.distance(b);
+    }
+
 
 } // geometry
